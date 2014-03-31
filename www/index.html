@@ -1,43 +1,292 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Éditions de la Martinière</title>
+	<meta charset="utf-8" />
 
-    http://www.apache.org/licenses/LICENSE-2.0
+	<!-- Viewport pour affichage correct sur mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">L'appareil est prêt</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+	<!-- Mode WebApp sur iOS avec icones et écrans de démarrage -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="apple-touch-icon" href="img_layout/apple-icon.png">
+	<link rel="apple-touch-startup-image" href="img_layout/apple-748x1024.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+	<link rel="apple-touch-startup-image" href="img_layout/apple-768x1004.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">  
+
+	<!-- Intégration jQuery / jQuery Mobile -->
+	<link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.2.min.css" />
+	<script src="jquery-mobile/jquery-2.1.0.min.js"></script>
+	<script src="jquery-mobile/jquery.mobile-1.4.2.min.js"></script>
+
+	<!-- Perso -->
+	<style>
+		figure.single-image {
+			margin: 0 auto;
+			padding: 0;
+			width: 100%;
+		}
+		figure.single-image img {
+			width: 100%;
+			height: auto;
+			display: block;
+			max-width: 35em;
+		}
+	</style>
+</head> 
+<body> 
+
+<div data-role="page" id="page-home">
+	<div data-role="header" data-position="fixed">
+		<h1>La Martinière</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<p>Bienvenue sur le site mobile des Éditions de La Martinière.</p>
+
+		<ul data-role="listview" data-inset="true" data-divider-theme="a">
+		    <li data-role="list-divider">L'actualité</li>
+		    <li><a href="#popup-notimplemented" data-transition="slide" data-rel="popup">Blog</a></li>
+		    <li><a href="#page-concours" data-rel="dialog">Jeu-concours</a></li>
+		    <li><a href="#page-liste" data-transition="slide">Idées cadeaux</a></li>
+		    <li data-role="list-divider">Le catalogue</li>
+		    <li><a href="#popup-notimplemented" data-transition="slide" data-rel="popup">Par thème</a></li>
+		    <li><a href="#popup-notimplemented" data-transition="slideup" data-rel="popup">Par auteur</a></li>
+		    <li><a href="#popup-notimplemented" data-transition="pop" data-rel="popup">Par titre</a></li>
+		    <li data-role="list-divider">La Maison</li>
+		    <li><a href="#page-historique">Historique</a></li>
+		    <li><a href="#">Nous rendre visite</a></li>
+		    <li><a href="#page-contacts">Contacts</a></li>
+		</ul>
+
+		<div data-role="popup" id="popup-notimplemented"  data-position-to="window" data-overlay-theme="a">
+		    <div data-role="header">
+		        <h1>Oups</h1>
+		    </div>
+		    <div data-role="content">
+		        <h3>Rubrique indisponible pour le moment</h3>
+		        <p>Revenez ultérieurement.</p>
+		        <a href="#" data-role="button" data-rel="back"  data-icon="delete" >Fermer</a>
+		    </div>
+		</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>&copy; La Martinière</h4>
+	</div><!-- /footer -->
+
+	
+</div>
+
+
+
+<div data-role="page" id="page-historique">
+	<div data-role="header" data-position="fixed" >
+		<a href="#" data-icon="back" data-rel="back">Retour</a>
+		<h1>La Martinière</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<h1>Historique</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" >
+		<h4>&copy; La Martinière</h4>
+	</div><!-- /footer -->	
+</div>
+
+
+<div data-role="dialog" id="page-concours">
+	<div data-role="header" data-position="fixed" >
+		<h1>Concours</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<h2>Jeu concours</h2>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+
+		<form method="post" action="#">
+			<h4>Les questions</h4>
+			<label for="f-quest1" class="select">Amazonia est une immersion :</label>
+			<select name="f-quest1" id="f-quest1" data-native-menu="false">
+			    <option>Votre réponse</option>
+			    <option value="opt1">Dans la forêt amazonienne</option>
+			    <option value="opt2">Dans la forêt noire</option>
+			    <option value="opt3">Dans la forêt de Fontainebleau</option>
+			</select>
+
+			<label for="f-quest2" class="select">Le héros du film est :</label>
+			<select name="f-quest2" id="f-quest2" data-native-menu="false">
+			    <option>Votre réponse</option>
+			    <option value="opt1">Un lionceau</option>
+			    <option value="opt2">Un agneau</option>
+			    <option value="opt3">Un singe</option>
+			</select>
+
+			<label for="f-quest3">Quel pourcentage de la forêt amazonienne a disparu entre 2000 et 2010 ?</label>
+			<input type="range" name="slider-fill" id="f-quest3" value="0" min="0" max="100" step="5" data-highlight="true">
+
+			<h4>Vos coordonnées</h4>
+			<div data-role="fieldcontain">
+			    <label for="f-nom">Nom</label>
+			    <input type="text" name="f-nom" id="f-nom" placeholder="Entrez votre nom" value="">
+			    <label for="f-prenom">Prénom</label>
+			    <input type="text" name="f-prenom" id="f-prenom" placeholder="Entrez votre prénom" value="">
+			    <label for="f-adresse">Adresse</label>
+			    <input type="text" name="f-adresse" id="f-adresse" value="">
+			    <label for="f-codepostal">Code postal</label>
+			    <input type="number" name="f-codepostal" id="f-codepostal" value=""> 
+			</div>
+
+			<h4>Envoyez votre réponse</h4>
+			<input type="submit" name="f-concours" id="f-concours" data-inline="true" value="envoyer">
+		</form>
+
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" >
+		<h4>&copy; La Martinière</h4>
+	</div><!-- /footer -->	
+</div>
+
+<div data-role="page" id="page-contacts">
+	<div data-role="header" data-position="fixed" >
+		<a href="#" data-icon="back" data-rel="back">Retour</a>
+		<h1>Nous contacter</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-divider-theme="a">
+		    <li data-role="list-divider">Par mail</li>
+		    <li><a href="mailto:contact@toto.fr">Projets</a></li>
+		    <li><a href="mailto:contact@toto.fr?subject=Recrutement">Recrutement</a></li>
+		    <li><a href="mailto:contact@toto.fr?subject=Partenariat&amp;body=Contact%20depuis%20le%20site">Partenariats</a></li>
+		    <li data-role="list-divider">Par téléphone</li>
+		    <li><a href="tel:+33668858152">Appelez-nous !</a></li>
+		</ul>
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" >
+		<h4>&copy; La Martinière</h4>
+	</div><!-- /footer -->	
+</div>
+
+<div data-role="page" id="page-liste">
+	<div data-role="header" data-position="fixed" >
+		<a href="#" data-icon="back" data-rel="back">Retour</a>
+		<h1>Idées cadeaux</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<ul data-role="listview" data-divider-theme="a" data-filter="true">
+			<li>
+				<a href="#page-details" data-transition="slide">
+					<img src="img_content/eveils_thumb.jpg">
+					<h5>Eveils</h5>
+					<p><strong>Olivier Föllmi et Danielle Föllmi</strong></p>
+					<p>100 pensées de sages d'Asie</p>
+				</a>
+			</li>
+			<li>
+				<a href="#page-details" data-transition="slide">
+					<img src="img_content/version_thumb.jpg">
+					<h5>Version Originale</h5>
+					<p><strong>Raynal Pellicer</strong></p>
+					<p>La photographie de presse retouchée</p>
+				</a>
+			</li>
+			<li>
+				<a href="#page-details" data-transition="slide">
+					<img src="img_content/futur_thumb.jpg">
+					<h5>Le Futur</h5>
+					<p><strong>Al Gore et Jean-Marc Millanvoye</strong></p>
+					<p>Six logiciels pour changer le monde</p>
+				</a>
+			</li>
+			<li>
+				<a href="#page-details" data-transition="slide">
+					<img src="img_content/terre_thumb.jpg">
+					<h5>Sur la Terre des loups</h5>
+					<p><strong>Patrick Blin et Nicolas Vanier</strong></p>
+					<p>Voyage en Yakoutie</p>
+				</a>
+			</li>
+			<li>
+				<a href="#page-details" data-transition="slide">
+					<img src="img_content/enquetes_thumb.jpg">
+					<h5>Enquêtes générales</h5>
+					<p><strong>Raynal Pellicer et Titwane</strong></p>
+					<p>Immersion au coeur de la brigade de répression du banditisme</p>
+				</a>
+			</li>
+			<li>
+				<a href="#page-details" data-transition="slide">
+					<img src="img_content/french_thumb.jpg">
+					<h5>You're so French men</h5>
+					<p><strong>Isabelle Thomas et Frédérique Veysset</strong></p>
+					<p>Secrets de l'élégance à la française</p>
+				</a>
+			</li>
+		</ul>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" >
+		<h4>&copy; La Martinière</h4>
+	</div><!-- /footer -->	
+</div>
+
+
+
+
+<div data-role="page" id="page-details">
+	<div data-role="header" data-position="fixed" >
+		<a href="#" data-icon="back" data-rel="back">Retour</a>
+		<h1>Livre</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<h1>Version Originale</h1>
+		<h2>Raynal Pellicer</h2>
+		<h3>La photographie de presse retouchée</h3>
+		
+		<figure class="single-image">
+			<a href="#photo-details">
+				<img src="img_content/version_sd.jpg">
+			</a>
+		</figure>
+
+		<p>Cet ouvrage rassemble le fruit de 3 années de recherches et d’acquisitions, soit une centaine de photographies de presse publiées entre 1910 et 1970 par des quotidiens américains comme The Chicago Tribune, The Baltimore Sun ou encore The Detroit News… Retouchées manuellement à la gouache, à l'encre de Chine ou au crayon gras, ces images constituent de véritables œuvres d'art.</p>
+
+		<div class="ui-grid-a">
+			<div class="ui-block-a"><div class="ui-bar ui-bar-a">Photographie</div></div>
+			<div class="ui-block-b"><div class="ui-bar">232 pages</div></div>
+			<div class="ui-block-a"><div class="ui-bar">240x285 mm</div></div>
+			<div class="ui-block-b"><div class="ui-bar">42 €</div></div>
+		</div>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" >
+		<h4>&copy; La Martinière</h4>
+	</div><!-- /footer -->	
+</div>
+
+
+<div data-role="page" id="photo-details">
+	<a href="#" data-rel="back">
+		<figure class="single-image">
+			<img src="img_content/version_sd.jpg">
+		</figure>
+	</a>
+</div>
+
+
+
+
+</body>
 </html>
